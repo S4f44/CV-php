@@ -12,62 +12,94 @@
                         <li>2022-maintenant : Ecriture multimédia à la haute école ISFSC</li>
                     </ul>
         </section>
-            <h2>Expérience Professionnelles</h2>
-                <ul>
-                    <em>
-                    <li>Avril 2016 - Présent : Développeur Front-End, Société TechVision, Bruxelles </li>
-                        <ul>
-                            <li>Conception et développement d'interfaces utilisateur pour des applications web et mobiles en utilisant HTML, CSS et JavaScript.</li>
-                            <li>Collaboration étroite avec les designers pour transformer des maquettes en interfaces interactives et conviviales.</li>
-                            <li>Expérience dans la mise en œuvre de projets Agile, avec des sprints et des réunions de planification et de rétrospective.</li>
-                            <li>Utilisation de frameworks tels que React et Vue.js pour créer des expériences utilisateur dynamiques et réactives.</li>
-                            <li>Intégration de services RESTful et utilisation de Git pour le contrôle de version.</li>  
-                        </ul> 
-                </ul>
-
-                <ul>
-                    <li>Avril 2016 - Présent : Développeur Front-End, Société TechVision, Bruxelles </li>
-                        <ul>
-                            <li>Conception et développement d'interfaces utilisateur pour des applications web et mobiles en utilisant HTML, CSS et JavaScript.</li>
-                            <li>Collaboration étroite avec les designers pour transformer des maquettes en interfaces interactives et conviviales.</li>
-                            <li>Expérience dans la mise en œuvre de projets Agile, avec des sprints et des réunions de planification et de rétrospective.</li>
-                        </ul>
-                    </em>
-                </ul>
 
 
-<?php 
-    $skillsList = new WP_Query(['post_type' => 'skills']);
-?>
-<?php if ($skillsList->have_posts()): ?>
-        <h2>Soft Skills</h2>
-                <ul>
-                    
-                    <?php while ($skillsList->have_posts()): $skillsList->the_post(); ?>
-                    <li><?php the_content(); ?></li>
+
+
+
+            <?php 
+                $exproList = new WP_Query(['post_type' => 'expro']);
+            ?>
+            <?php if ($exproList->have_posts()): ?>
+            <h2>Expériences Professionnelles</h2>
+                <ul><em>
+                    <?php while ($exproList->have_posts()): $exproList->the_post(); ?>
+                    <li><?php the_title(); ?></li>
+                    <?php the_content(); ?>
                     <?php endwhile; ?>
-                </ul>
-<?php endif; ?>
+            </em></ul>
+            <?php endif; ?>
 
-            <h2>Hard Skills</h2>
-                <ul>
-                    <li>Certification TOSA Illustrator : 706/1000, niveau oprationnel</li>
-                    <li>Gestion de projets : Assurer la planification, la coordination et la mise en œuvre de projets multimédias, en veillant au respect des délais et des objectifs fixés.</li>
-                </ul>
 
+
+
+
+
+
+            <?php 
+                $skillsList = new WP_Query(['post_type' => 'skills']);
+            ?>
+            <?php if ($skillsList->have_posts()): ?>
+                    <h2>Soft Skills</h2>
+                        <?php while ($skillsList->have_posts()): $skillsList->the_post(); ?>
+                        <?php the_content(); ?>
+                        <?php endwhile; ?>
+            <?php endif; ?>
+
+
+
+
+
+
+
+
+            <?php 
+                $hskillsList = new WP_Query(['post_type' => 'hskills']);
+            ?>
+            <?php if ($hskillsList->have_posts()): ?>
+                    <h2>Hard Skills</h2>
+                    <ul>
+                        <?php while ($hskillsList->have_posts()): $hskillsList->the_post(); ?>
+                        <li><?php the_content(); ?></li>
+                        <?php endwhile; ?>
+                    </ul>
+            <?php endif; ?>
+
+
+
+
+
+
+            <?php 
+                $langues = new WP_Query(['post_type' => 'langues']);
+            ?>
+            <?php if ($langues->have_posts()): ?>
             <h2>Langues</h2>
                 <ul>
-                    <li>Français (courant),</li>
-                    <li>Anglais (avancé),</li>
-                    <li>Néerlandais (notions),</li>
+                <?php while ($langues->have_posts()): $langues->the_post(); ?>
+                    <li><?php the_content(); ?></li> 
+                <?php endwhile; ?>
                 </ul>
+             <?php endif; ?>
 
-            <h2>Centres d'intérêts</h2>
+
+
+
+
+
+            <?php 
+                    $interets = new WP_Query(['post_type' => 'interets']);
+                ?>
+            <?php if ($interets->have_posts()): ?>
+
+                <h2>Centres d'intérêts</h2>
                 <ul>
-                    <li>Programmation créative</li>
-                    <li>Musique : Pratique de la guitare et de la composition musicale</li>
-                    <li>Randonnée : Exploration des magnifiques paysages naturels en Belgique et ailleurs</li>
+                    <?php while ($interets->have_posts()): $interets->the_post(); ?>
+                        <li><?php the_content(); ?></li> 
+                    <?php endwhile; ?>
                 </ul>
+            <?php endif; ?>
+
     </main>
 
     <?php get_footer(); ?>
