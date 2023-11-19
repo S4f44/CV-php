@@ -6,7 +6,7 @@
         <title>CV de Safa</title>
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>\assets\css\app.css">
     
-    <?php wp_head(); ?>
+        <?php wp_head(); ?>
     </head>
 
 <body  <?php body_class(); ?>  >
@@ -23,8 +23,8 @@
                 <ul>
                     <li>Date de naissance : 12 aout 2003 (20 ans)</li>
                     <li>Adresse : rue de l'étoile 25, 1620 Drogenbos, Belgique</li>
-                    <li>Téléphone :<em><a href="mailto">+32 4 88 03 50 04</a></em></li>
-                    <li>Email :<a href="mailto">bencersafa@yahoo.com</a></li>
+                    <li>Téléphone :<em><a href="tel:+32 4 88 03 50 04">+32 4 88 03 50 04</a></em></li>
+                    <li>Email :<a href="mailto:bencersafa@yahoo.com">bencersafa@yahoo.com</a></li>
                 </ul>
     </div>
 </header>
