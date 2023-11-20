@@ -23,7 +23,7 @@
                         <?php if($start_date && $end_date): ?>
                             <?php echo date('Y', strtotime($start_date)); ?> - <?php echo date('Y', strtotime($end_date)); ?> :
                         <?php endif; ?>    
-                        <?php the_title(); ?>
+                        <?php the_title(); ?> - <a href="<?php the_permalink(); ?>"> Voir </a>
                     </li>
                     <?php endwhile; ?>
                 </ul>
@@ -40,7 +40,7 @@
             <h2>Expériences Professionnelles</h2>
                 <ul><em>
                     <?php while ($exp_proList->have_posts()): $exp_proList->the_post(); ?>
-                    <li><?php the_title(); ?></li>
+                    <li><?php the_title(); ?> - <a href="<?php the_permalink(); ?>"> Voir </a></li>
                     <?php the_content(); ?>
                     <?php endwhile; ?>
             </em></ul>
@@ -59,7 +59,7 @@
                <h2>Soft Skills</h2> 
                 <ul>
                         <?php while ($skillsList->have_posts()): $skillsList->the_post(); ?>
-                        <li><?php the_title(); ?></li>
+                        <li><?php the_title(); ?> - <a href="<?php the_permalink(); ?>"> Voir </a></li>
                         <?php endwhile; ?>
                 </ul>
             <?php endif; ?>
@@ -78,7 +78,7 @@
                     <h2>Hard Skills</h2>
                     <ul>
                         <?php while ($hskillsList->have_posts()): $hskillsList->the_post(); ?>
-                        <li><?php the_title(); ?></li>
+                        <li><?php the_title(); ?>- <a href="<?php the_permalink(); ?>"> Voir </a></li>
                         <?php endwhile; ?>
                     </ul>
             <?php endif; ?>
@@ -95,7 +95,7 @@
             <h2>Langues</h2>
                 <ul>
                 <?php while ($langues->have_posts()): $langues->the_post(); ?>
-                    <li><?php the_title(); ?></li> 
+                    <li><?php the_title(); ?>- <a href="<?php the_permalink(); ?>"> Voir </a></li> 
                 <?php endwhile; ?>
                 </ul>
              <?php endif; ?>
@@ -113,7 +113,7 @@
                 <h2>Centres d'intérêts</h2>
                 <ul>
                     <?php while ($interets->have_posts()): $interets->the_post(); ?>
-                        <li><?php the_title(); ?></li> 
+                        <li><?php the_title(); ?>- <a href="<?php the_permalink(); ?>"> Voir </a></li> 
                     <?php endwhile; ?>
                 </ul>
             <?php endif; ?>

@@ -15,6 +15,7 @@ function create_custom_posts() {
         'labels' => ['name' => 'Soft skills'],
         'public' => true,
         'show_in_rest' => true,
+        'support' => ['thumbnails']
     ]);
 
     register_post_type('hskills', [
